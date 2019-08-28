@@ -35,6 +35,20 @@ router.get('/saved', function (req, res) {
         .where('deleted').equals(false)
         .populate('notes')
         .sort('-date')
+        .exec(function (error, articles) {
+            if (error) {
+                console.log(error);
+                res.status(500);
+            } else {
+                console.log(articles);
+                var hbsObj = {
+                    title: 'All the News',
+                    subtitle: ' That\'s Fit to Scrape',
+                    articles: articles
+                };
+                res.render('saved', hbsObj);
+            }
+        });
 });
 
 router.use('/api', require('./api'));
