@@ -27,3 +27,15 @@ router.get('/', function (req, res) {
             }
         });
 });
+// Establishing route to save articles.
+router.get('/saved', function (req, res) {
+    Article
+        .find({})
+        .where('saved').equals(true)
+        .where('deleted').equals(false)
+        .populate('notes')
+        .sort('-date')
+});
+
+router.use('/api', require('./api'));
+module.exports = router;
