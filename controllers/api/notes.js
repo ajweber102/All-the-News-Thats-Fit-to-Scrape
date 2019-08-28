@@ -45,4 +45,16 @@ router.post('/:id', function(req, res) {
     });
 });
 
+// Delete note
+router.delete('/:id', function(req, res) {
+    Note.findByIdAndRemove(req.params.id, function(err, note) {
+        if (err) {
+            console.log(err);
+            res.status(500);            
+        } else {
+            res.redirect('/saved');
+        }
+    });
+});
+
 module.exports = router;
