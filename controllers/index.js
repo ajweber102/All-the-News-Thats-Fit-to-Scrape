@@ -20,7 +20,7 @@ router.get('/', function (req, res) {
                 console.log(articles);
                 let hbsObj = {
                     title: 'All the News Thats Fit to Scrape',
-                    subtitle: 'Let\'s get started!',
+                    subtitle: 'Scraping the latest in tech news at your convenience.',
                     articles: articles
                 };
                 res.render('index', hbsObj);
@@ -43,7 +43,7 @@ router.get('/saved', function (req, res) {
                 console.log(articles);
                 var hbsObj = {
                     title: 'All the News That\'s Fit to Scrape',
-                    subtitle: 'Let\'s get started!',
+                    subtitle: 'Scraping the latest in tech news at your convenience.',
                     articles: articles
                 };
                 res.render('saved', hbsObj);

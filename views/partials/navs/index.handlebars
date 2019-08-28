@@ -1,13 +1,21 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">Scraper!</a>
+        <div class="navbar-header" style="width:5%;">
+            <a class="navbar-brand" style="margin-left: 0px" href="#">Scraper!</a>
         </div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="/saved">Saved Articles</a></li>
-            <li><a href="/api">API</a></li>
+            <li class="active">
+                <a href="#" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">Home</a>
+            </li>
+            <li>
+                <a href="/saved" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">Saved Articles</a>
+            </li>
+            <li>
+                <a href="/api" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">API</a>
+            </li>
         </ul>
-        <a class="btn btn-primary navbar-btn" id="scrapeBtn" href="/api/articles/scrape">Scrape New Articles!</a>
+        <div style="padding-top:.5rem; padding-left:20rem;">
+            <a class="btn" style="padding-top: 1rem; background-color: green; width: 15%; font-size:10px" id="scrapeBtn" href="/api/articles/scrape">Scrape New Articles!</a>
+        </div>
     </div>
 </nav>
