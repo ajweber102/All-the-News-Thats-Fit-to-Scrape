@@ -100,7 +100,7 @@ router.delete('/:id', function (req, res) {
 
 // SCRAPE ARTICLES
 router.get('/scrape', function (req, res, next) {
-    request('https://news.ycombinator.com', function (error, response, html) {
+    request('https://fstoppers.com/', function (error, response, html) {
         let $ = cheerio.load(html);
         let results = [];
         $('tr.athing td.title').each(function (i, e) {
@@ -121,7 +121,7 @@ router.get('/scrape', function (req, res, next) {
                             console.log(err);
                         }
                     } else {
-                        console.log('new article added');
+                        console.log('Added New Article');
                     }
                 });
             }
