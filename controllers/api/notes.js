@@ -32,6 +32,14 @@ router.post('/:id', function(req, res) {
             Article.findOneAndUpdate(
                 { _id: req.params.id },
                 { $push: { 'notes': doc.id } },
+                function(error, newDoc) {
+                    if (error) {
+                        console.log(error);
+                        res.status(500);
+                    } else {
+                        res.redirect('/saved');
+                    }
+                }
             );
         }
     });
