@@ -98,9 +98,9 @@ router.delete('/:id', function (req, res) {
     );
 });
 
-// SCRAPE ARTICLES
+// SCRAPE
 router.get('/scrape', function (req, res, next) {
-    request('https://fstoppers.com/', function (error, response, html) {
+    request('https://news.ycombinator.com', function (error, response, html) {
         let $ = cheerio.load(html);
         let results = [];
         $('tr.athing td.title').each(function (i, e) {
@@ -121,7 +121,7 @@ router.get('/scrape', function (req, res, next) {
                             console.log(err);
                         }
                     } else {
-                        console.log('Added New Article');
+                        console.log('Added a new article');
                     }
                 });
             }
